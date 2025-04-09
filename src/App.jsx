@@ -182,7 +182,7 @@ function App() {
         </h1>
 
         {showKeyInput && (
-          <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-10">
+          <div className="fixed inset-0 bg-[rgba(0,0,0,0.5)] flex items-center justify-center z-10">
             <div className="bg-white p-6 rounded-lg shadow-yellow-400/20 shadow-lg max-w-md w-full">
               <h2 className="text-xl font-semibold text-yellow-600 mb-4">
                 Enter Gemini API Key
@@ -314,7 +314,7 @@ function App() {
                     {message.role === "user" ? "You" : "AI Assistant"}:
                   </div>
                   <div className="whitespace-pre-line text-gray-800">
-                    {message.content}
+                    {message.content.replace(/\*\*/g, "")}
                   </div>
                 </div>
               ))}
@@ -328,7 +328,7 @@ function App() {
         )}
       </main>
 
-      <footer className="py-3 text-center text-sm text-gray-500 border-t border-gray-200">
+      <footer className="py-4 text-center text-3xl font-semibold text-gray-700 border-t border-gray-200">
         Aitore Nurkali, ID: 240103049
       </footer>
     </div>
